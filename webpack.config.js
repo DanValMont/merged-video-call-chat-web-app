@@ -2,7 +2,6 @@ const config = {
   mode: "production",
   entry: __dirname + "/src/js/main.js",
   output: {
-    path: "/",
     filename: "bundle.js",
     assetModuleFilename: "images/[name][ext]",
     clean: true,
