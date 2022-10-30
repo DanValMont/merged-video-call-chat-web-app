@@ -49,6 +49,7 @@ export const getIncomingCallDialog = (
   acceptCallButton.addEventListener("click", () => {
     if (window.matchMedia("(max-width: 56.25em)").matches) {
       document.getElementById("dashboard-container").style.display = "none";
+      document.getElementById("call_container").style.opacity = "1";
       document.getElementById("video_chat_dashboard_button").disabled = true;
       document.getElementById("video_chat_dashboard_button").style.background =
         "rgba(255, 255, 255, 0.218)";
@@ -76,6 +77,7 @@ export const getIncomingCallDialog = (
   rejectCallButton.addEventListener("click", () => {
     if (window.matchMedia("(max-width: 56.25em)").matches) {
       document.getElementById("dashboard-container").style.display = "none";
+      document.getElementById("call_container").style.opacity = "1";
       document.getElementById("video_chat_dashboard_button").disabled = false;
       document.getElementById("video_chat_dashboard_button").style.background =
         "rgba(0, 0, 0, 0.2)";

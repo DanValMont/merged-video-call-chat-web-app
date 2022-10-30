@@ -182,6 +182,7 @@ export const handlePreOffer = (data) => {
 
     if (window.matchMedia("(max-width: 56.25em)").matches) {
       document.getElementById("dashboard-container").style.display = "none";
+      document.getElementById("call_container").style.opacity = "1";
       document.getElementById("video_chat_dashboard_button").disabled = true;
       document.getElementById("video_chat_dashboard_button").style.background =
         "rgba(255, 255, 255, 0.218)";
