@@ -53,19 +53,19 @@ const createPeerConnection = () => {
   peerConnection.ondatachannel = (event) => {
     const dataChannel = event.channel;
 
-    dataChannel.onopen = () => {
-      console.log("peer connection is ready to recive data channel messages");
-    };
+    // dataChannel.onopen = () => {
+    //   console.log("peer connection is ready to recive data channel messages");
+    // };
 
     dataChannel.onmessage = (event) => {
-      console.log("message came from data channel");
+      // console.log("message came from data channel");
       const message = JSON.parse(event.data);
       ui.appendMessage(message);
     };
   };
 
   peerConnection.onicecandidate = (event) => {
-    console.log("getting ice candidates from stun server");
+    // console.log("getting ice candidates from stun server");
 
     if (event.candidate) {
       // send our ice candidates to other peer
@@ -77,11 +77,11 @@ const createPeerConnection = () => {
     }
   };
 
-  peerConnection.onconnectionstatechange = (event) => {
-    if (peerConnection.connectionState === "connected") {
-      console.log("successfully connected with other peer");
-    }
-  };
+  // peerConnection.onconnectionstatechange = (event) => {
+  //   if (peerConnection.connectionState === "connected") {
+  //     console.log("successfully connected with other peer");
+  //   }
+  // };
 
   //receiving tracks
   const remoteStream = new MediaStream();
@@ -207,14 +207,14 @@ export const handlePreOffer = (data) => {
 };
 
 const acceptCallHandler = () => {
-  console.log("call accepted");
+  // console.log("call accepted");
   createPeerConnection();
   sendPreOfferAnswer(constants.preOfferAnswer.CALL_ACCEPTED);
   ui.showCallElements(connectedUserDetails.callType);
 };
 
 const rejectCallHandler = () => {
-  console.log("call rejected");
+  // console.log("call rejected");
   sendPreOfferAnswer(constants.preOfferAnswer.CALL_REJECTED);
   setIncomingCallsAvailable();
 };
@@ -242,8 +242,8 @@ const sendPreOfferAnswer = (preOfferAnswer, callerSocketId = null) => {
 
 export const handlePreOfferAnswer = (data) => {
   const { preOfferAnswer } = data;
-  console.log("pre offer answer came");
-  console.log(data);
+  // console.log("pre offer answer came");
+  // console.log(data);
 
   ui.removeAllDialogs();
 
@@ -304,7 +304,7 @@ export const handleWebRTCOffer = async (data) => {
 };
 
 export const handleWebRTCAnswer = async (data) => {
-  console.log("handling webRTC Answer");
+  // console.log("handling webRTC Answer");
   await peerConnection.setRemoteDescription(data.answer);
 };
 
@@ -344,7 +344,7 @@ export const switchBetweenCameraAndScreenSharing = async (
     store.setScreenSharingActive(!screenSharingActive);
     ui.updateLocalVideo(localStream);
   } else {
-    console.log("switching for screen sharing");
+    // console.log("switching for screen sharing");
     try {
       screenSharingStream = await navigator.mediaDevices.getDisplayMedia({
         video: true,

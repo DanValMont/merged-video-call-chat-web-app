@@ -10,7 +10,7 @@ export const registerSocketEvents = (socket) => {
   socketIO = socket;
 
   socket.on("connect", () => {
-    console.log("successfully connected to socket.io server");
+    // console.log("successfully connected to socket.io server");
     store.setSocketId(socket.id);
     ui.updatePersonalCode(socket.id);
   });

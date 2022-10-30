@@ -876,7 +876,7 @@ switchForScreenSharingButton.addEventListener("click", () => {
 
 const newMessageInput = document.getElementById("new_message_input");
 newMessageInput.addEventListener("keydown", (event) => {
-  console.log("change occured");
+  // console.log("change occured");
   const key = event.key;
 
   if (key === "Enter") {

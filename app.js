@@ -26,7 +26,7 @@ let connectedPeersStrangers = [];
 
 io.on("connection", (socket) => {
   connectedPeers.push(socket.id);
-  console.log(connectedPeers);
+  // console.log(connectedPeers);
 
   socket.on("pre-offer", (data) => {
     const { calleePersonalCode, callType } = data;
@@ -51,8 +51,8 @@ io.on("connection", (socket) => {
   });
 
   socket.on("pre-offer-answer", (data) => {
-    console.log("pre-offer-answer-came");
-    console.log(data);
+    // console.log("pre-offer-answer-came");
+    // console.log(data);
 
     const connectedPeer = connectedPeers.find(
       (peerSocketId) => peerSocketId === data.callerSocketId
@@ -99,7 +99,7 @@ io.on("connection", (socket) => {
       connectedPeersStrangers = newConnectedPeersStrangers;
     }
 
-    console.log(connectedPeersStrangers);
+    // console.log(connectedPeersStrangers);
   });
 
   socket.on("get-stranger-socket-id", () => {
@@ -123,7 +123,7 @@ io.on("connection", (socket) => {
   });
 
   socket.on("disconnect", () => {
-    console.log("user disconnected");
+    // console.log("user disconnected");
 
     const newConnectedPeers = connectedPeers.filter((peerSocketId) => {
       return peerSocketId !== socket.id;
@@ -139,5 +139,5 @@ io.on("connection", (socket) => {
 });
 
 server.listen(PORT, () => {
-  console.log(`listening on port ${PORT}`);
+  // console.log(`listening on port ${PORT}`);
 });
