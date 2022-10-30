@@ -12,3 +12,7 @@ The project was built with javascript ("vanilla" javascript) and uses technologi
 - Babel
 - webpack
 - sass
+
+## Demo Website
+
+[MERGED](https://merged-video-call-chat-web-app-production.up.railway.app/)
