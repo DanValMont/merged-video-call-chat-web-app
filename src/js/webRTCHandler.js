@@ -61,6 +61,67 @@ const createPeerConnection = () => {
       // console.log("message came from data channel");
       const message = JSON.parse(event.data);
       ui.appendMessage(message);
+      const chatButtonAnimate = document.getElementById(
+        "chat_message_display_button"
+      );
+      chatButtonAnimate.animate(
+        [
+          {
+            offset: 0,
+            transform: "scale(1) rotate(0deg)",
+            transformOrigin: "50% 50%",
+          },
+          {
+            offset: 0.1,
+            transform: "scale(1.3) rotate(8deg)",
+          },
+          {
+            offset: 0.2,
+            transform: "scale(1) rotate(-10deg)",
+          },
+          {
+            offset: 0.3,
+            transform: "scale(1.3) rotate(10deg)",
+          },
+          {
+            offset: 0.4,
+            transform: "scale(1) rotate(-10deg)",
+          },
+          {
+            offset: 0.5,
+            transform: "scale(1.3) rotate(10deg)",
+          },
+          {
+            offset: 0.6,
+            transform: "scale(1) rotate(-10deg)",
+          },
+          {
+            offset: 0.7,
+            transform: "scale(1.3) rotate(10deg)",
+          },
+          {
+            offset: 0.8,
+            transform: "scale(1) rotate(-8deg)",
+          },
+          {
+            offset: 0.9,
+            transform: "scale(1.3) rotate(8deg)",
+          },
+          {
+            offset: 1,
+            transform: "scale(1) rotate(0deg)",
+            transformOrigin: "50% 50%",
+          },
+        ],
+        {
+          duration: 1400,
+          easing: "ease-out",
+          delay: 0,
+          iterations: 4,
+          direction: "alternate",
+          fill: "none",
+        }
+      );
     };
   };
 
