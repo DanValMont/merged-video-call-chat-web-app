@@ -15,4 +15,4 @@ The project was built with javascript ("vanilla" javascript) and uses technologi
 
 ## Demo Website
 
-[MERGED](https://merged-video-call-chat-web-app-production.up.railway.app/)
+[MERGED](https://merged.onrender.com/)
